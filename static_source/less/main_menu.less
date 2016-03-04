@@ -1,0 +1,82 @@
+/*--------------------------------------------------------
+/* main menu
+--------------------------------------------------------*/
+
+@color: rgba(255,255,255,0.8);
+@active_color: #fff;
+@border_color: #49565D;
+@main_background: #3A4B55;
+@hover_background: #2C3A42;
+@active_border_color: #65B688;
+@active_background: #65B688;
+@left_marker_color: #EE8366;
+@font_size: 12px;
+
+.sidemenu {
+  background-color: @main_background;
+}
+
+#main-menu {
+  background-color: @main_background;
+  ul {
+    padding: 0;
+    > li {
+      border-top: 1px solid @border_color;
+      position: relative;
+      font-size: @font_size;
+      i {
+        font-size: 16px;
+        position: absolute;
+        right: 14px;
+        top: 16px;
+        opacity: 0.8;
+      }
+      >a {
+        color: @color;
+        padding: 13px 40px 14px 14px;
+        display: block;
+        border-left: 3px solid transparent;
+        &:hover {
+          text-decoration: none;
+        }
+      }//a
+
+      &:hover {
+        > a {
+          color: @active_color;
+          border-left: 3px solid @left_marker_color;
+          background-color: @hover_background;
+        }
+      }//:hover
+
+      &.has-ul {
+        li {
+          > a {
+            border-left: 3px solid transparent;
+          }
+        }
+
+        ul.hidden-ul {
+          display: none;
+          transition: 0.25s ease-in;
+        }
+      }
+
+      //ul li.active
+      &.active {
+        > a {
+          color: @active_color;
+          background-color: @active_background;
+          border-color: @active_border_color;
+        }
+
+        &.has-ul > ul.hidden-ul {
+          display: inherit;
+          background-color: @hover_background;
+        }
+
+
+      }//active
+    }//li
+  }//ul
+}
