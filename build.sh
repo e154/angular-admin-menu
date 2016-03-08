@@ -6,7 +6,13 @@ function do_init() {
 	sudo npm install -g bower
 	npm install
 	bower install
-	gulp
+
+	mkdir -p static_source/fonts
+	cd static_source/fonts
+	ln -s ../bower_components/bootstrap/fonts/* .
+  ln -s ../bower_components/font-awesome/fonts/* .
+
+  gulp
 }
 
 function do_clear() {

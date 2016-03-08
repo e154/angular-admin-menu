@@ -14,6 +14,8 @@ angular
     <a href="#" title="{{::node.name}}" ng-click="goto(node)">
       <span>{{::node.name}}</span>
       <i ng-class="[node.icon]" ng-if="node.icon"></i>
+      <span ng-if="node.children.length && !node.active" class="plus">+</span>
+      <span ng-if="node.children.length && node.active" class="minus">-</span>
     </a>
     <ul class="hidden-ul" ng-if="node.children.length" ng-include=\'"main-menu-template"\'></ul>
   </li>
@@ -31,7 +33,7 @@ angular
     scope:
       mainMenu: '='
     link: ($scope, $element, $attrs) ->
-      $log.debug $scope.mainMenu
+#      $log.debug $scope.mainMenu
 
       # обход графа
       setActive =(cn)->

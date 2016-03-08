@@ -2,8 +2,8 @@ angular
 .module('appServices')
 .constant('mainMenuTree', [
     {
-      name: "Сотрудники Lognetix"
-      icon: "glyphicon glyphicon-user"
+      name: "Сотрудники"
+      icon: "fa fa-users"
       children: [
         {
           name: "Должности"
@@ -49,7 +49,7 @@ angular
     }
     {
       name: "Интерфейс Конфигуратора"
-      icon: "glyphicon glyphicon-th"
+      icon: "fa fa-object-group"
       children: [
         {
           name: "Скины"
@@ -71,7 +71,7 @@ angular
     }
     {
       name: "Валюта"
-      icon: "glyphicon glyphicon-euro"
+      icon: "fa fa-btc"
       children: [
         {
           name: "Список валют"
