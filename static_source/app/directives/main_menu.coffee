@@ -23,9 +23,12 @@ angular
 
 <ul class="main-menu">
   <li ng-repeat="node in mainMenu" ng-class="{\'has-ul\' : node.children.length, \'active\': node.active }">
+    <span class="glow"></span>
     <a href="#" title="{{::node.name}}" ng-click="goto(node)">
       <span>{{::node.name}}</span>
       <i ng-class="[node.icon]" ng-if="node.icon"></i>
+      <span ng-if="node.children.length && !node.active" class="plus">+</span>
+      <span ng-if="node.children.length && node.active" class="minus">-</span>
     </a>
     <ul class="hidden-ul" ng-if="node.children.length" ng-include=\'"main-menu-template"\'></ul>
   </li>

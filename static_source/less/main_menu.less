@@ -12,8 +12,12 @@
 @hover_background_level4: #212b33;
 @active_border_color: #1b232b;
 @active_background: #1b232b;
-@left_marker_color: #ffeffc;
+@left_marker_color: #1f2b42;
+@left_marker_color_shadow: #434d59;
+@left_marker_active_color: #4291a6;
+@left_marker_active_color_shadow: #7bc8d7;
 @font_size: 12px;
+@icon_size: 16px;
 
 .sidemenu {
   background-color: @main_background;
@@ -28,7 +32,7 @@
       position: relative;
       font-size: @font_size;
       i {
-        font-size: 16px;
+        font-size: @icon_size;
         position: absolute;
         left: 14px;
         top: 14px;
@@ -43,16 +47,39 @@
           text-decoration: none;
         }
       }//a
+
+      .glow {
+        position: absolute;
+        height: 40px;
+        width: 5px;
+        -webkit-transition: box-shadow 0.3s;
+        -moz-transition: box-shadow 0.3s;
+        -o-transition: box-shadow 0.3s;
+        transition: box-shadow 0.3s;
+        background: @left_marker_color;
+        -webkit-box-shadow: 0 0 2px 1px @left_marker_color_shadow inset;
+        -moz-box-shadow: 0 0 2px 1px @left_marker_color_shadow inset;
+        box-shadow: 0 0 2px 1px @left_marker_color_shadow inset;
+        margin-top: 2px;
+        z-index: 100;
+      }//glow
+
       span.plus,
       span.minus {
         position: absolute;
         right: 20px;
       }
 
+
       &:hover {
+        .glow {
+          background: @left_marker_active_color;
+          -webkit-box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
+          -moz-box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
+          box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
+        }
         > a {
           color: @active_color;
-          border-left: 3px solid @left_marker_color;
           background-color: @hover_background;
         }
       }//:hover
@@ -72,11 +99,16 @@
 
       //ul li.active
       &.active {
+        .glow {
+          background: @left_marker_active_color;
+          -webkit-box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
+          -moz-box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
+          box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
+        }
         > a {
           color: @active_color;
           background-color: @active_background;
           border-color: @active_border_color;
-          border-left: 3px solid @left_marker_color;
         }
 
         &.has-ul > ul.hidden-ul {
