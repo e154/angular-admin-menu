@@ -1,4 +1,7 @@
-.left-sidebar
-  #main-menu(main-menu="home.mainMenu")
+.left-sidebar(ng-init="style=false")
+  #main-menu(main-menu="home.mainMenu" ng-class="{dark : style, light : !style}")
 
 .container
+  %button.btn.btn-default(ng-click="style = !style")
+    %span(ng-if="style") dark style
+    %span(ng-if="!style") light style

@@ -2,44 +2,61 @@
 /* main menu
 --------------------------------------------------------*/
 
-@color: rgba(219, 219, 219, 0.8);
-@active_color: #e7e7e7;
-@border_color: #49565D;
-@main_background: #3A4B55;
-@hover_background: #2C3A42;
-@hover_background_level2: #2d3b44;
-@hover_background_level3: #2b3841;
-@hover_background_level4: #2a363f;
-@active_border_color: #27333b;
-@active_background: #27333b;
-@left_marker_color: #1f2b42;
-@left_marker_color_shadow: #434d59;
-@left_marker_active_color: #4291a6;
-@left_marker_active_color_shadow: #7bc8d7;
-@font_size: 12px;
-@icon_size: 16px;
+@dark_color: rgba(219, 219, 219, 0.8);
+@dark_active_color: #e7e7e7;
+@dark_border_color: #49565D;
+@dark_main_background: #3A4B55;
+@dark_hover_background: #2C3A42;
+@dark_hover_background_level2: #2d3b44;
+@dark_hover_background_level3: #2b3841;
+@dark_hover_background_level4: #2a363f;
+@dark_active_border_color: #27333b;
+@dark_active_background: #27333b;
+@dark_left_marker_color: #1f2b42;
+@dark_left_marker_color_shadow: #434d59;
+@dark_left_marker_active_color: #4291a6;
+@dark_left_marker_active_color_shadow: #7bc8d7;
+@dark_font_size: 12px;
+@dark_icon_size: 16px;
+
+@light_color: #191919;
+@light_active_color: #282828;
+@light_border_color: #c4bcba;
+@light_main_background: #e3dedd;
+@light_hover_background: #e2dddc;
+@light_hover_background_level2: #d9d4d3;
+@light_hover_background_level3: #cfcac9;
+@light_hover_background_level4: #c7c2c1;
+@light_active_border_color: #747170;
+@light_active_background: #b7b2b1;
+@light_left_marker_color: #1f2b42;
+@light_left_marker_color_shadow: #434d59;
+@light_left_marker_active_color: #4291a6;
+@light_left_marker_active_color_shadow: #7bc8d7;
+@light_font_size: 12px;
+@light_icon_size: 16px;
 
 .sidemenu {
-  background-color: @main_background;
+  background-color: @dark_main_background;
 }
 
-#main-menu {
-  background-color: @main_background;
+#main-menu.dark {
+  background-color: @dark_main_background;
   ul {
     padding: 0;
     > li {
-      border-top: 1px solid @border_color;
+      border-top: 1px solid @dark_border_color;
       position: relative;
-      font-size: @font_size;
+      font-size: @dark_font_size;
       i {
-        font-size: @icon_size;
+        font-size: @dark_icon_size;
         position: absolute;
         left: 14px;
         top: 14px;
         opacity: 0.8;
       }
       >a {
-        color: @color;
+        color: @dark_color;
         padding: 13px 40px 14px 40px;
         display: block;
         border-left: 3px solid transparent;
@@ -58,10 +75,10 @@
         -moz-transition: box-shadow 0.3s;
         -o-transition: box-shadow 0.3s;
         transition: box-shadow 0.3s;
-        background: @left_marker_color;
-        -webkit-box-shadow: 0 0 2px 1px @left_marker_color_shadow inset;
-        -moz-box-shadow: 0 0 2px 1px @left_marker_color_shadow inset;
-        box-shadow: 0 0 2px 1px @left_marker_color_shadow inset;
+        background: @dark_left_marker_color;
+        -webkit-box-shadow: 0 0 2px 1px @dark_left_marker_color_shadow inset;
+        -moz-box-shadow: 0 0 2px 1px @dark_left_marker_color_shadow inset;
+        box-shadow: 0 0 2px 1px @dark_left_marker_color_shadow inset;
         margin-top: 2px;
         z-index: 100;
       }//glow
@@ -75,14 +92,14 @@
 
       &:hover {
         .glow {
-          background: @left_marker_active_color;
-          -webkit-box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
-          -moz-box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
-          box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
+          background: @dark_left_marker_active_color;
+          -webkit-box-shadow: 0 0 2px 1px @dark_left_marker_active_color_shadow inset;
+          -moz-box-shadow: 0 0 2px 1px @dark_left_marker_active_color_shadow inset;
+          box-shadow: 0 0 2px 1px @dark_left_marker_active_color_shadow inset;
         }
         > a {
-          color: @active_color;
-          background-color: @hover_background;
+          color: @dark_active_color;
+          background-color: @dark_hover_background;
         }
       }//:hover
 
@@ -105,23 +122,23 @@
       //ul li.active
       &.active {
         .glow {
-          background: @left_marker_active_color;
-          -webkit-box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
-          -moz-box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
-          box-shadow: 0 0 2px 1px @left_marker_active_color_shadow inset;
+          background: @dark_left_marker_active_color;
+          -webkit-box-shadow: 0 0 2px 1px @dark_left_marker_active_color_shadow inset;
+          -moz-box-shadow: 0 0 2px 1px @dark_left_marker_active_color_shadow inset;
+          box-shadow: 0 0 2px 1px @dark_left_marker_active_color_shadow inset;
         }
         > a {
-          color: @active_color;
-          background-color: @active_background;
-          border-color: @active_border_color;
+          color: @dark_active_color;
+          background-color: @dark_active_background;
+          border-color: @dark_active_border_color;
         }
 
         &.has-ul > ul.hidden-ul {
           display: inherit;
-          background-color: @hover_background;
+          background-color: @dark_hover_background;
           li.active {
             &.has-ul > ul.hidden-ul {
-              background-color: @hover_background_level2;
+              background-color: @dark_hover_background_level2;
               > li {
                 > a {
                   padding: 13px 40px 14px 50px;
@@ -129,7 +146,7 @@
               }
               li.active {
                 &.has-ul > ul.hidden-ul {
-                  background-color: @hover_background_level3;
+                  background-color: @dark_hover_background_level3;
                   > li {
                     > a {
                       padding: 13px 40px 14px 60px;
@@ -137,7 +154,141 @@
                   }
                   li.active {
                     &.has-ul > ul.hidden-ul {
-                      background-color: @hover_background_level4;
+                      background-color: @dark_hover_background_level4;
+                      > li {
+                        > a {
+                          padding: 13px 40px 14px 70px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+
+      }//active
+    }//li
+  }//ul
+}
+
+#main-menu.light {
+  background-color: @light_main_background;
+  ul {
+    padding: 0;
+    > li {
+      border-top: 1px solid @light_border_color;
+      position: relative;
+      font-size: @light_font_size;
+      i {
+        font-size: @light_icon_size;
+        position: absolute;
+        left: 14px;
+        top: 14px;
+        opacity: 0.8;
+      }
+      >a {
+        color: @light_color;
+        padding: 13px 40px 14px 40px;
+        display: block;
+        border-left: 3px solid transparent;
+        text-decoration: none;
+        font-weight: 600;
+        &:hover {
+          text-decoration: none;
+        }
+      }//a
+
+      .glow {
+        position: absolute;
+        height: 40px;
+        width: 5px;
+        -webkit-transition: box-shadow 0.3s;
+        -moz-transition: box-shadow 0.3s;
+        -o-transition: box-shadow 0.3s;
+        transition: box-shadow 0.3s;
+        background: @light_left_marker_color;
+        -webkit-box-shadow: 0 0 2px 1px @light_left_marker_color_shadow inset;
+        -moz-box-shadow: 0 0 2px 1px @light_left_marker_color_shadow inset;
+        box-shadow: 0 0 2px 1px @light_left_marker_color_shadow inset;
+        margin-top: 2px;
+        z-index: 100;
+      }//glow
+
+      span.plus,
+      span.minus {
+        position: absolute;
+        right: 20px;
+      }
+
+
+      &:hover {
+        .glow {
+          background: @light_left_marker_active_color;
+          -webkit-box-shadow: 0 0 2px 1px @light_left_marker_active_color_shadow inset;
+          -moz-box-shadow: 0 0 2px 1px @light_left_marker_active_color_shadow inset;
+          box-shadow: 0 0 2px 1px @light_left_marker_active_color_shadow inset;
+        }
+        > a {
+          color: @light_active_color;
+          background-color: @light_hover_background;
+        }
+      }//:hover
+
+      &.has-ul {
+        li {
+          > a {
+            border-left: 3px solid transparent;
+          }
+        }
+
+        ul.hidden-ul {
+          display: none;
+          transition: 0.25s ease-in;
+          a {
+            font-weight: inherit;
+          }
+        }
+      }
+
+      //ul li.active
+      &.active {
+        .glow {
+          background: @light_left_marker_active_color;
+          -webkit-box-shadow: 0 0 2px 1px @light_left_marker_active_color_shadow inset;
+          -moz-box-shadow: 0 0 2px 1px @light_left_marker_active_color_shadow inset;
+          box-shadow: 0 0 2px 1px @light_left_marker_active_color_shadow inset;
+        }
+        > a {
+          color: @light_active_color;
+          background-color: @light_active_background;
+          border-color: @light_active_border_color;
+        }
+
+        &.has-ul > ul.hidden-ul {
+          display: inherit;
+          background-color: @light_hover_background;
+          li.active {
+            &.has-ul > ul.hidden-ul {
+              background-color: @light_hover_background_level2;
+              > li {
+                > a {
+                  padding: 13px 40px 14px 50px;
+                }
+              }
+              li.active {
+                &.has-ul > ul.hidden-ul {
+                  background-color: @light_hover_background_level3;
+                  > li {
+                    > a {
+                      padding: 13px 40px 14px 60px;
+                    }
+                  }
+                  li.active {
+                    &.has-ul > ul.hidden-ul {
+                      background-color: @light_hover_background_level4;
                       > li {
                         > a {
                           padding: 13px 40px 14px 70px;
