@@ -2,16 +2,16 @@
 /* main menu
 --------------------------------------------------------*/
 
-@color: rgba(255,255,255,0.8);
-@active_color: #fff;
+@color: rgba(219, 219, 219, 0.8);
+@active_color: #e7e7e7;
 @border_color: #49565D;
 @main_background: #3A4B55;
 @hover_background: #2C3A42;
-@hover_background_level2: #2a373f;
-@hover_background_level3: #253038;
-@hover_background_level4: #212b33;
-@active_border_color: #1b232b;
-@active_background: #1b232b;
+@hover_background_level2: #2d3b44;
+@hover_background_level3: #2b3841;
+@hover_background_level4: #2a363f;
+@active_border_color: #27333b;
+@active_background: #27333b;
 @left_marker_color: #1f2b42;
 @left_marker_color_shadow: #434d59;
 @left_marker_active_color: #4291a6;
@@ -43,6 +43,8 @@
         padding: 13px 40px 14px 40px;
         display: block;
         border-left: 3px solid transparent;
+        text-decoration: none;
+        font-weight: 600;
         &:hover {
           text-decoration: none;
         }
@@ -94,6 +96,9 @@
         ul.hidden-ul {
           display: none;
           transition: 0.25s ease-in;
+          a {
+            font-weight: inherit;
+          }
         }
       }
 
